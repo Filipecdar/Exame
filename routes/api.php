@@ -97,10 +97,11 @@ $this->groups = $groupData['groups'];
 $this->cheapestPrice = $groupData['cheapestPrice'];
 $this->cheapestGroup = $groupData['cheapestGroup'];
 
-Route::get('/', function() {
+Route::get('/exame', function() {
     return ['flights'       => $this->allFlights,
             'groups'        => $this->groups,
             'totalGroups'   => count($this->groups),
+            'totalFlights'  => count($this->allFlights),
             'cheapestPrice' => $this->cheapestPrice,
             'cheapestGroup' => $this->cheapestGroup ];
 });
